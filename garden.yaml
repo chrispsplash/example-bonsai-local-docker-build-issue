@@ -1,0 +1,22 @@
+apiVersion: garden.io/v1
+kind: Project
+name: local-docker-build-issue
+
+environments:
+  - name: default
+
+providers:
+  - name: kubernetes
+    context: ${local.env.KUBE_CONTEXT}
+    environments: [default]
+    deploymentRegistry:
+      hostname: localhost
+      port: 5000
+
+---
+kind: Build
+type: container
+name: pgbuckle
+#
+# uncomment this to fix the build
+#buildAtSource: true
