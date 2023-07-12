@@ -12,6 +12,7 @@ providers:
     deploymentRegistry:
       hostname: localhost
       port: 5000
+      namespace: local
 
 ---
 kind: Build
